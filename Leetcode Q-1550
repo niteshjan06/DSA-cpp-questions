@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool threeConsecutiveOdds(vector<int>& arr) {
+        int odd_count = 0;
+        for(int x : arr){
+            if(x % 2 == 0){ //checks if array element is odd or even.
+                odd_count = 0;
+            }
+            if(x % 2 != 0){ //increments odd counter if element is odd.
+                odd_count++;
+            }
+            if(odd_count > 2){ //return true if odd counter is greater than 2.
+                return true;
+            }
+            
+        }
+        return false; //if nothing returns , it returns false.
+    }
+};
