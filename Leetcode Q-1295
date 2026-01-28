@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int findNumbers(vector<int>& nums) {
+        int count,elements_count = 0;
+        int digit,temp;
+        for(int x : nums){ // iterates each elements.
+            count = 0;
+            temp = x;
+            while(temp != 0){ //loop for counting digits in the elements.
+                temp /= 10;
+                count++;
+            }
+            if(count % 2 == 0){ //if digit count of element is even it increments counter.
+                elements_count++;
+            }
+        }
+        return elements_count; //returns that counter.
+    }
+};
