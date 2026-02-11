@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        if(ransomNote.length() > magazine.length()){
+            return false;
+        }
+
+        int hashArray[26] = {0};
+
+        for(int i=0;i<magazine.length();i++){
+            hashArray[magazine[i] - 97]++;
+        }
+        for(int i=0;i<ransomNote.length();i++){
+            hashArray[ransomNote[i] - 97]--;
+        }
+        
+
+        for(int i : hashArray){
+            if(i < 0){
+                return false;
+            }
+        }
+        return true;
+
+    }
+};
